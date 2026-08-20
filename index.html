@@ -1,2195 +1,504 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Премиальное портфолио профессионального видеографа. Кинематографичные рекламные ролики, автомобильная съёмка, мероприятия, клипы и контент для социальных сетей."
-    >
+    <title>AXADOVSEVEN — Visual Creator</title>
 
-    <meta
-        name="keywords"
-        content="видеограф, видеосъемка, видеограф Узбекистан, filmmaker, cinematic video, рекламная съемка, автомобильная съемка"
-    >
+    <meta name="description"
+          content="AXADOVSEVEN — фотограф и визуальный автор. Автомобили, fashion и lifestyle.">
 
-    <meta
-        name="author"
-        content="ALEX FILM"
-    >
-
-    <meta
-        name="theme-color"
-        content="#030508"
-    >
-
-    <!-- Open Graph -->
-
-    <meta
-        property="og:title"
-        content="ALEX FILM — Видеограф"
-    >
-
-    <meta
-        property="og:description"
-        content="Кинематографичные визуальные истории для брендов, людей и проектов."
-    >
-
-    <meta
-        property="og:type"
-        content="website"
-    >
-
-    <title>
-        axadovseven— Видеограф
-    </title>
-
-    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 
-<!-- =====================================================
-     NOISE
-===================================================== -->
+<header class="header">
 
-<div class="noise"></div>
-
-
-<!-- =====================================================
-     CUSTOM CURSOR
-===================================================== -->
-
-<div
-    class="cursor-dot"
-    aria-hidden="true"
-></div>
-
-<div
-    class="cursor-label"
-    aria-hidden="true"
->
-    СМОТРЕТЬ
-</div>
-
-
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
-
-<header
-    class="navbar"
-    id="navbar"
->
-
-    <a
-        href="#top"
-        class="brand"
-    >
-        ALEX
-        <span>/</span>
-        FILM
+    <a href="#home" class="logo">
+        AXADOVSEVEN
+        <span>VISUAL CREATOR</span>
     </a>
 
-
-    <nav
-        class="desktop-nav"
-        aria-label="Главная навигация"
-    >
-
-        <a href="#work">
-            РАБОТЫ
-        </a>
-
-        <a href="#about">
-            ОБО МНЕ
-        </a>
-
-        <a href="#services">
-            УСЛУГИ
-        </a>
-
-        <a href="#process">
-            ПРОЦЕСС
-        </a>
-
-        <a href="#contact">
-            КОНТАКТЫ
-        </a>
-
+    <nav class="desktop-nav">
+        <a href="#home">Главная</a>
+        <a href="#work">Работы</a>
+        <a href="#about">Обо мне</a>
+        <a href="#contact">Контакты</a>
     </nav>
 
-
-    <a
-        href="#contact"
-        class="talk-btn"
-    >
-        ОБСУДИТЬ ПРОЕКТ
-        <span>→</span>
+    <a href="#contact" class="header-button">
+        СВЯЗАТЬСЯ ↗
     </a>
 
-
-    <button
-        class="menu-btn"
-        aria-label="Открыть меню"
-    >
-
-        <i></i>
-        <i></i>
-
+    <button class="burger" id="burger">
+        <span></span>
+        <span></span>
     </button>
 
 </header>
 
 
-<!-- =====================================================
-     MOBILE MENU
-===================================================== -->
+<!-- ================= MOBILE MENU ================= -->
 
-<div class="mobile-menu">
+<div class="mobile-menu" id="mobileMenu">
 
-    <div class="mobile-menu-inner">
+    <a href="#home">Главная</a>
+    <a href="#work">Работы</a>
+    <a href="#about">Обо мне</a>
+    <a href="#contact">Контакты</a>
 
-        <span class="menu-kicker">
-            НАВИГАЦИЯ
-        </span>
+</div>
 
 
-        <a href="#work">
+<!-- ================= HERO ================= -->
 
-            РАБОТЫ
+<section class="hero" id="home">
 
-            <small>
-                01
-            </small>
+    <div class="hero-bg"></div>
 
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            PHOTOGRAPHER / VISUAL CREATOR
+        </div>
+
+        <h1>
+            VISUAL<br>
+            <span>STORIES</span>
+        </h1>
+
+        <p>
+            Создаю визуальные истории
+            для людей, брендов и автомобилей.
+        </p>
+
+        <a href="#work" class="hero-button">
+            СМОТРЕТЬ РАБОТЫ ↓
         </a>
 
+    </div>
 
-        <a href="#about">
+    <div class="hero-bottom">
 
-            ОБО МНЕ
+        <span>SELECTED WORK — 2026</span>
 
-            <small>
-                02
+        <span>UZBEKISTAN / WORLDWIDE</span>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+    <div class="section-number">
+        01 / INTRO
+    </div>
+
+    <div class="intro-text">
+
+        <p>НЕ ПРОСТО</p>
+
+        <p><strong>ФОТОГРАФИЯ.</strong></p>
+
+        <p>НЕ ПРОСТО</p>
+
+        <p><strong>КАДР.</strong></p>
+
+        <p class="blue">НАСТРОЕНИЕ.</p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WORK ================= -->
+
+<section class="work" id="work">
+
+    <div class="work-header">
+
+        <div>
+
+            <span class="section-number">
+                02 / PORTFOLIO
+            </span>
+
+            <h2>
+                SELECTED
+                <span>WORK.</span>
+            </h2>
+
+        </div>
+
+        <p>
+            Три направления.<br>
+            Один визуальный стиль.
+        </p>
+
+    </div>
+
+
+    <!-- ================= ALBUMS ================= -->
+
+    <div class="albums">
+
+
+        <!-- CARS -->
+
+        <div class="album"
+             data-album="cars">
+
+            <div class="album-image">
+
+                <img
+                    src="assets/cars/cars-01.jpg"
+                    alt="Автомобили">
+
+                <div class="album-overlay"></div>
+
+                <div class="album-number">
+                    01
+                </div>
+
+                <div class="album-count">
+                    49 PHOTOS
+                </div>
+
+                <div class="album-info">
+
+                    <small>AUTOMOTIVE</small>
+
+                    <h3>МАШИНЫ</h3>
+
+                    <span>
+                        ОТКРЫТЬ АЛЬБОМ →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FASHION -->
+
+        <div class="album"
+             data-album="fashion">
+
+            <div class="album-image">
+
+                <img
+                    src="assets/fashion/fashion-01.jpg"
+                    alt="Одежда">
+
+                <div class="album-overlay"></div>
+
+                <div class="album-number">
+                    02
+                </div>
+
+                <div class="album-count">
+                    16 PHOTOS
+                </div>
+
+                <div class="album-info">
+
+                    <small>FASHION</small>
+
+                    <h3>ОДЕЖДА</h3>
+
+                    <span>
+                        ОТКРЫТЬ АЛЬБОМ →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LIFESTYLE -->
+
+        <div class="album"
+             data-album="lifestyle">
+
+            <div class="album-image">
+
+                <img
+                    src="assets/lifestyle/lifestyle-01.jpg"
+                    alt="Lifestyle">
+
+                <div class="album-overlay"></div>
+
+                <div class="album-number">
+                    03
+                </div>
+
+                <div class="album-count">
+                    34 PHOTOS
+                </div>
+
+                <div class="album-info">
+
+                    <small>LIFESTYLE</small>
+
+                    <h3>LIFESTYLE</h3>
+
+                    <span>
+                        ОТКРЫТЬ АЛЬБОМ →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <span class="section-number">
+        03 / ABOUT
+    </span>
+
+    <div class="about-grid">
+
+        <div class="about-image">
+
+            <img
+                src="assets/lifestyle/lifestyle-04.jpg"
+                alt="Visual Creator">
+
+        </div>
+
+        <div class="about-content">
+
+            <h2>
+                Я СОЗДАЮ
+                <span>КАДРЫ,</span>
+                КОТОРЫЕ
+                <span>ОСТАЮТСЯ.</span>
+            </h2>
+
+            <p>
+                Фотография для меня — это не просто
+                правильный кадр.
+            </p>
+
+            <p>
+                Это свет, движение, атмосфера,
+                детали и эмоции.
+            </p>
+
+            <div class="stats">
+
+                <div>
+                    <strong>99+</strong>
+                    <span>PHOTOS</span>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <span>DIRECTIONS</span>
+                </div>
+
+                <div>
+                    <strong>2026</strong>
+                    <span>ACTIVE</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-label">
+        04 / CONTACT
+    </div>
+
+    <div class="contact-content">
+
+        <div class="contact-left">
+            <span>ЕСТЬ ПРОЕКТ?</span>
+
+            <h2>
+                LET'S CREATE
+                <br>
+                <i>SOMETHING</i>
+                <br>
+                GREAT.
+            </h2>
+
+            <p>
+                Автомобили, fashion, lifestyle,
+                рекламная и коммерческая съёмка.
+            </p>
+        </div>
+
+
+        <div class="contact-right">
+
+            <!-- Кнопка -->
+            <a href="mailto:yourmail@gmail.com?subject=Новый проект"
+               class="project-button">
+
+                <span>НАЧАТЬ ПРОЕКТ</span>
+
+                <strong>↗</strong>
+
+            </a>
+
+
+            <div class="contact-list">
+
+                <a href="https://instagram.com/" target="_blank">
+                    <span>INSTAGRAM</span>
+                    <b>↗</b>
+                </a>
+
+                <a href="https://t.me/" target="_blank">
+                    <span>TELEGRAM</span>
+                    <b>↗</b>
+                </a>
+
+                <a href="mailto:yourmail@gmail.com">
+                    <span>EMAIL</span>
+                    <b>↗</b>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ALBUM MODAL ================= -->
+
+<div class="album-modal" id="albumModal">
+
+    <div class="modal-header">
+
+        <div>
+
+            <small id="modalCategory">
+                AUTOMOTIVE
             </small>
 
-        </a>
+            <h2 id="modalTitle">
+                МАШИНЫ
+            </h2>
 
+        </div>
 
-        <a href="#services">
+        <button id="modalClose">
+            ×
+        </button>
 
-            УСЛУГИ
+    </div>
 
-            <small>
-                03
-            </small>
-
-        </a>
-
-
-        <a href="#process">
-
-            ПРОЦЕСС
-
-            <small>
-                04
-            </small>
-
-        </a>
-
-
-        <a href="#contact">
-
-            КОНТАКТЫ
-
-            <small>
-                05
-            </small>
-
-        </a>
-
+    <div class="modal-gallery"
+         id="modalGallery">
     </div>
 
 </div>
 
 
+<!-- ================= LIGHTBOX ================= -->
 
-<main id="top">
+<div class="lightbox" id="lightbox">
 
+    <button class="lightbox-close"
+            id="lightboxClose">
+        ×
+    </button>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+    <button class="lightbox-prev"
+            id="lightboxPrev">
+        ←
+    </button>
 
-<section class="hero">
+    <div class="lightbox-content">
 
+        <img id="lightboxImg" src="" alt="">
 
-    <!-- ФОНОВОЕ ВИДЕО -->
+        <div class="lightbox-info">
 
-    <video
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85"
-    >
-
-        <source
-            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-            type="video/mp4"
-        >
-
-    </video>
-
-
-    <!-- Затемнение -->
-
-    <div class="hero-overlay"></div>
-
-
-    <!-- Линия -->
-
-    <div class="hero-grid"></div>
-
-
-    <!-- Контент -->
-
-    <div class="hero-content reveal">
-
-
-        <p class="eyebrow">
-
-            ВИДЕОГРАФ
-            /
-            РЕЖИССЁР
-
-        </p>
-
-
-        <h1>
-
-            ВИЗУАЛЬНЫЕ<br>
-
-            ИСТОРИИ<br>
-
-            <em>
-                КОТОРЫЕ ЗАПОМИНАЮТСЯ
-            </em>
-
-        </h1>
-
-
-        <p class="hero-sub">
-
-            Создаю кинематографичные рекламные ролики,
-            автомобильные фильмы, видео с мероприятий
-            и визуальный контент для брендов.
-
-        </p>
-
-
-        <div class="hero-actions">
-
-
-            <a
-                href="#work"
-                class="button button-light"
-            >
-
-                СМОТРЕТЬ РАБОТЫ
-
-                <span>
-                    ↓
-                </span>
-
-            </a>
-
-
-            <a
-                href="#contact"
-                class="button button-ghost"
-            >
-
-                ОБСУДИТЬ ПРОЕКТ
-
-                <span>
-                    →
-                </span>
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-
-    <!-- Информация -->
-
-    <div class="hero-meta">
-
-        <span>
-
-            ИЗБРАННЫЕ РАБОТЫ
-            —
-            2026
-
-        </span>
-
-
-        <span>
-
-            УЗБЕКИСТАН<br>
-
-            РАБОТАЮ ПО ВСЕМУ МИРУ
-
-        </span>
-
-    </div>
-
-
-    <!-- Scroll -->
-
-    <div class="scroll-indicator">
-
-        <span></span>
-
-        ЛИСТАЙТЕ
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     INTRO
-===================================================== -->
-
-<section class="intro section-pad">
-
-
-    <div class="section-label reveal">
-
-        01
-        /
-        ВВЕДЕНИЕ
-
-    </div>
-
-
-    <div class="intro-copy">
-
-        <h2 class="split-text reveal">
-
-            Я НЕ ПРОСТО<br>
-
-            СНИМАЮ ВИДЕО.
-
-            <span>
-
-                Я СОЗДАЮ МОМЕНТЫ,<br>
-
-                КОТОРЫЕ ХОЧЕТСЯ<br>
-
-                ПОМНИТЬ.
-
+            <span id="lightboxName">
+                МАШИНЫ
             </span>
 
-        </h2>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     WORK
-===================================================== -->
-
-<section
-    class="work section-pad"
-    id="work"
->
-
-
-    <div class="section-head reveal">
-
-
-        <div>
-
-            <span class="section-label">
-
-                ИЗБРАННЫЕ РАБОТЫ
-
-            </span>
-
-
-            <h2>
-
-                КАДР —<br>
-
-                ЭТО ИСТОРИЯ.
-
-            </h2>
-
-        </div>
-
-
-        <p>
-
-            Подборка проектов,
-            созданных для брендов,
-            людей и историй,
-            которые заслуживают внимания.
-
-        </p>
-
-
-    </div>
-
-
-
-    <!-- FILTERS -->
-
-    <div class="filters reveal">
-
-
-        <button
-            class="filter active"
-            data-filter="all"
-        >
-            ВСЕ
-        </button>
-
-
-        <button
-            class="filter"
-            data-filter="commercial"
-        >
-            РЕКЛАМА
-        </button>
-
-
-        <button
-            class="filter"
-            data-filter="automotive"
-        >
-            АВТОМОБИЛИ
-        </button>
-
-
-        <button
-            class="filter"
-            data-filter="events"
-        >
-            МЕРОПРИЯТИЯ
-        </button>
-
-
-        <button
-            class="filter"
-            data-filter="social"
-        >
-            СОЦИАЛЬНЫЕ СЕТИ
-        </button>
-
-
-        <button
-            class="filter"
-            data-filter="personal"
-        >
-            ЛИЧНЫЕ ПРОЕКТЫ
-        </button>
-
-
-    </div>
-
-
-
-    <!-- PORTFOLIO -->
-
-    <div
-        class="masonry"
-        id="portfolio"
-    >
-
-
-        <!-- PROJECT 01 -->
-
-        <article
-            class="project-card wide"
-            data-category="automotive"
-            data-type="image"
-            data-index="0"
-        >
-
-            <div class="media">
-
-
-                <img
-                    loading="lazy"
-                    alt="Автомобильная кинематографичная съёмка"
-                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        ПРОЕКТ 01
-                    </span>
-
-                    <b>
-                        СМОТРЕТЬ ПРОЕКТ →
-                    </b>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="card-info">
-
-                <span>
-                    АВТОМОБИЛИ
-                    /
-                    2026
-                </span>
-
-                <strong>
-                    НОЧНОЙ ЗАЕЗД
-                </strong>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 02 -->
-
-        <article
-            class="project-card tall"
-            data-category="commercial"
-            data-type="image"
-            data-index="1"
-        >
-
-            <div class="media">
-
-
-                <img
-                    loading="lazy"
-                    alt="Рекламная видеосъёмка"
-                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        ПРОЕКТ 02
-                    </span>
-
-                    <b>
-                        СМОТРЕТЬ ПРОЕКТ →
-                    </b>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="card-info">
-
-                <span>
-                    РЕКЛАМА
-                    /
-                    2026
-                </span>
-
-                <strong>
-                    ДВИЖЕНИЕ
-                </strong>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 03 -->
-
-        <article
-            class="project-card square"
-            data-category="events"
-            data-type="image"
-            data-index="2"
-        >
-
-            <div class="media">
-
-
-                <img
-                    loading="lazy"
-                    alt="Съёмка мероприятия"
-                    src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1400&q=85"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        ПРОЕКТ 03
-                    </span>
-
-                    <b>
-                        СМОТРЕТЬ ПРОЕКТ →
-                    </b>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="card-info">
-
-                <span>
-                    МЕРОПРИЯТИЯ
-                    /
-                    2026
-                </span>
-
-                <strong>
-                    ПОСЛЕ ЗАКАТА
-                </strong>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 04 VIDEO -->
-
-        <article
-            class="project-card wide"
-            data-category="social"
-            data-type="video"
-            data-index="3"
-        >
-
-            <div class="media video-media">
-
-
-                <video
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    poster="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85"
-                >
-
-                    <source
-                        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-                        type="video/mp4"
-                    >
-
-                </video>
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        ПРОЕКТ 04
-                        /
-                        ВИДЕО
-                    </span>
-
-                    <b>
-                        ВОСПРОИЗВЕСТИ →
-                    </b>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="card-info">
-
-                <span>
-                    СОЦИАЛЬНЫЕ СЕТИ
-                </span>
-
-                <strong>
-                    ДВИЖЕНИЕ
-                </strong>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 05 -->
-
-        <article
-            class="project-card tall"
-            data-category="personal"
-            data-type="image"
-            data-index="4"
-        >
-
-            <div class="media">
-
-
-                <img
-                    loading="lazy"
-                    alt="Кинематографичный пейзаж"
-                    src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=85"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        ПРОЕКТ 05
-                    </span>
-
-                    <b>
-                        СМОТРЕТЬ ПРОЕКТ →
-                    </b>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="card-info">
-
-                <span>
-                    ЛИЧНЫЙ ПРОЕКТ
-                </span>
-
-                <strong>
-                    СИНИЙ ЧАС
-                </strong>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- PROJECT 06 -->
-
-        <article
-            class="project-card wide"
-            data-category="commercial"
-            data-type="image"
-            data-index="5"
-        >
-
-            <div class="media">
-
-
-                <img
-                    loading="lazy"
-                    alt="Премиальная рекламная съёмка"
-                    src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1800&q=85"
-                >
-
-
-                <div class="project-overlay">
-
-                    <span>
-                        ПРОЕКТ 06
-                    </span>
-
-                    <b>
-                        СМОТРЕТЬ ПРОЕКТ →
-                    </b>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="card-info">
-
-                <span>
-                    РЕКЛАМА
-                    /
-                    2026
-                </span>
-
-                <strong>
-                    ДЕТАЛЬ
-                </strong>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FEATURED PROJECTS
-===================================================== -->
-
-<section class="showcase section-pad">
-
-
-    <div class="showcase-title reveal">
-
-        <span class="section-label">
-
-            ГЛАВНЫЕ ПРОЕКТЫ
-
-        </span>
-
-
-        <h2>
-
-            ТРИ ИСТОРИИ.<br>
-
-            ОДИН ЯЗЫК.
-
-        </h2>
-
-    </div>
-
-
-
-    <!-- PROJECT 01 -->
-
-    <div
-        class="feature-project reveal"
-        data-index="0"
-    >
-
-        <img
-            loading="lazy"
-            alt="Автомобильный фильм"
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90"
-        >
-
-
-        <div class="feature-copy">
-
-            <span>
-                ПРОЕКТ 01
-            </span>
-
-
-            <h3>
-
-                АВТОМОБИЛЬНЫЙ<br>
-
-                ФИЛЬМ
-
-            </h3>
-
-
-            <button class="feature-open">
-
-                СМОТРЕТЬ ПРОЕКТ →
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- PROJECT 02 -->
-
-    <div
-        class="feature-project reveal"
-        data-index="1"
-    >
-
-        <img
-            loading="lazy"
-            alt="Рекламный фильм"
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=90"
-        >
-
-
-        <div class="feature-copy">
-
-            <span>
-                ПРОЕКТ 02
-            </span>
-
-
-            <h3>
-                РЕКЛАМНЫЙ ФИЛЬМ
-            </h3>
-
-
-            <button class="feature-open">
-
-                СМОТРЕТЬ ПРОЕКТ →
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- PROJECT 03 -->
-
-    <div
-        class="feature-project reveal"
-        data-index="2"
-    >
-
-        <img
-            loading="lazy"
-            alt="Фильм о мероприятии"
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2200&q=90"
-        >
-
-
-        <div class="feature-copy">
-
-            <span>
-                ПРОЕКТ 03
-            </span>
-
-
-            <h3>
-
-                ФИЛЬМ<br>
-
-                О МЕРОПРИЯТИИ
-
-            </h3>
-
-
-            <button class="feature-open">
-
-                СМОТРЕТЬ ПРОЕКТ →
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-    class="about section-pad"
-    id="about"
->
-
-
-    <div class="section-label reveal">
-
-        02
-        /
-        ОБО МНЕ
-
-    </div>
-
-
-    <div class="about-grid">
-
-
-        <button
-            class="portrait reveal lightbox-trigger"
-            data-index="6"
-            aria-label="Открыть фотографию видеографа"
-        >
-
-            <img
-                loading="lazy"
-                alt="Портрет видеографа"
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=90"
-            >
-
-
-            <span>
-                ОТКРЫТЬ ФОТО ↗
-            </span>
-
-        </button>
-
-
-
-        <div class="about-copy reveal">
-
-
-            <h2>
-
-                ПРЕВРАЩАЮ ИДЕИ<br>
-
-                В
-                <em>
-                    ВИЗУАЛЬНЫЕ ИСТОРИИ.
-                </em>
-
-            </h2>
-
-
-            <p>
-
-                Я создаю кинематографичный
-                видеоконтент для брендов,
-                предпринимателей, автомобилей,
-                мероприятий и социальных сетей.
-
-                Работаю с идеей, съёмкой,
-                монтажом, цветокоррекцией
-                и финальным оформлением.
-
-            </p>
-
-
-            <div class="stats">
-
-
-                <div>
-
-                    <strong data-count="5">
-                        0
-                    </strong>
-
-                    <span>
-                        ЛЕТ ОПЫТА
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <strong data-count="100">
-                        0
-                    </strong>
-
-                    <span>
-                        ПРОЕКТОВ
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <strong data-count="50">
-                        0
-                    </strong>
-
-                    <span>
-                        КЛИЕНТОВ
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <strong data-count="10">
-                        0
-                    </strong>
-
-                    <span>
-                        ГОРОДОВ
-                    </span>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section
-    class="services section-pad"
-    id="services"
->
-
-
-    <div class="section-label reveal">
-
-        03
-        /
-        УСЛУГИ
-
-    </div>
-
-
-    <div class="services-head reveal">
-
-
-        <h2>
-
-            ЧТО<br>
-
-            Я ДЕЛАЮ
-
-        </h2>
-
-
-        <div class="service-preview">
-
-            <img
-                id="serviceImage"
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
-                alt="Пример услуги"
-            >
-
-        </div>
-
-    </div>
-
-
-
-    <div class="service-list">
-
-
-        <button
-            class="service-item active reveal"
-            data-image="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
-        >
-
-            <span>
-                01
-            </span>
-
-            <b>
-                РЕКЛАМНЫЕ ВИДЕО
-            </b>
-
-            <i>
-                →
-            </i>
-
-        </button>
-
-
-        <button
-            class="service-item reveal"
-            data-image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85"
-        >
-
-            <span>
-                02
-            </span>
-
-            <b>
-                АВТОМОБИЛЬНАЯ СЪЁМКА
-            </b>
-
-            <i>
-                →
-            </i>
-
-        </button>
-
-
-        <button
-            class="service-item reveal"
-            data-image="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=85"
-        >
-
-            <span>
-                03
-            </span>
-
-            <b>
-                СЪЁМКА МЕРОПРИЯТИЙ
-            </b>
-
-            <i>
-                →
-            </i>
-
-        </button>
-
-
-        <button
-            class="service-item reveal"
-            data-image="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=85"
-        >
-
-            <span>
-                04
-            </span>
-
-            <b>
-                КОНТЕНТ ДЛЯ СОЦИАЛЬНЫХ СЕТЕЙ
-            </b>
-
-            <i>
-                →
-            </i>
-
-        </button>
-
-
-        <button
-            class="service-item reveal"
-            data-image="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=85"
-        >
-
-            <span>
-                05
-            </span>
-
-            <b>
-                МУЗЫКАЛЬНЫЕ КЛИПЫ
-            </b>
-
-            <i>
-                →
-            </i>
-
-        </button>
-
-
-        <button
-            class="service-item reveal"
-            data-image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85"
-        >
-
-            <span>
-                06
-            </span>
-
-            <b>
-                МОНТАЖ И ПОСТПРОДАКШН
-            </b>
-
-            <i>
-                →
-            </i>
-
-        </button>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PROCESS
-===================================================== -->
-
-<section
-    class="process section-pad"
-    id="process"
->
-
-
-    <div class="section-label reveal">
-
-        04
-        /
-        ПРОЦЕСС
-
-    </div>
-
-
-    <div class="process-intro reveal">
-
-        <h2>
-
-            ОТ ИДЕИ<br>
-
-            ДО
-            <em>
-                ФИНАЛЬНОГО КАДРА.
-            </em>
-
-        </h2>
-
-    </div>
-
-
-    <div class="timeline">
-
-
-        <div class="process-step reveal">
-
-            <span>
-                01
-            </span>
-
-            <h3>
-                ОБСУЖДЕНИЕ
-            </h3>
-
-            <p>
-
-                Обсуждаем вашу идею,
-                задачу, аудиторию
-                и визуальный стиль проекта.
-
-            </p>
-
-        </div>
-
-
-        <div class="process-step reveal">
-
-            <span>
-                02
-            </span>
-
-            <h3>
-                ПОДГОТОВКА
-            </h3>
-
-            <p>
-
-                Создаём концепцию,
-                сценарий, раскадровку
-                и план съёмки.
-
-            </p>
-
-        </div>
-
-
-        <div class="process-step reveal">
-
-            <span>
-                03
-            </span>
-
-            <h3>
-                СЪЁМКА
-            </h3>
-
-            <p>
-
-                Снимаем материал,
-                работая со светом,
-                движением и композицией.
-
-            </p>
-
-        </div>
-
-
-        <div class="process-step reveal">
-
-            <span>
-                04
-            </span>
-
-            <h3>
-                МОНТАЖ
-            </h3>
-
-            <p>
-
-                Монтаж, цветокоррекция,
-                музыка и звуковой дизайн.
-
-            </p>
-
-        </div>
-
-
-        <div class="process-step reveal">
-
-            <span>
-                05
-            </span>
-
-            <h3>
-                РЕЗУЛЬТАТ
-            </h3>
-
-            <p>
-
-                Передаём готовый
-                кинематографичный ролик
-                в нужных форматах.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     REVIEWS
-===================================================== -->
-
-<section class="reviews section-pad">
-
-
-    <div class="section-label reveal">
-
-        05
-        /
-        КЛИЕНТЫ
-
-    </div>
-
-
-    <div class="review-wrap reveal">
-
-
-        <div class="quote-mark">
-            “
-        </div>
-
-
-        <blockquote id="reviewText">
-
-            Работа выглядит дороже,
-            чем мы представляли.
-
-            Кадры, монтаж и внимание
-            к деталям сделали проект
-            действительно запоминающимся.
-
-        </blockquote>
-
-
-        <div class="review-author">
-
-            <strong id="reviewName">
-                DAVID K.
-            </strong>
-
-            <span id="reviewCompany">
-                ЧАСТНЫЙ КЛИЕНТ
+            <span id="lightboxCount">
+                01 / 49
             </span>
 
         </div>
 
-
-        <div class="review-controls">
-
-            <button id="prevReview">
-                ←
-            </button>
-
-
-            <span id="reviewCounter">
-                01 / 03
-            </span>
-
-
-            <button id="nextReview">
-                →
-            </button>
-
-        </div>
-
-
     </div>
 
-</section>
+    <button class="lightbox-next"
+            id="lightboxNext">
+        →
+    </button>
 
+</div>
 
 
-<!-- =====================================================
-     NUMBERS
-===================================================== -->
-
-<section class="numbers">
-
-
-    <div class="number-card">
-
-        <strong data-count="100">
-            0
-        </strong>
-
-        <span>
-            ПРОЕКТОВ
-        </span>
-
-    </div>
-
-
-    <div class="number-card">
-
-        <strong data-count="50">
-            0
-        </strong>
-
-        <span>
-            КЛИЕНТОВ
-        </span>
-
-    </div>
-
-
-    <div class="number-card">
-
-        <strong data-count="5">
-            0
-        </strong>
-
-        <span>
-            ЛЕТ ОПЫТА
-        </span>
-
-    </div>
-
-
-    <div class="number-card">
-
-        <strong class="infinity">
-            ∞
-        </strong>
-
-        <span>
-            ИСТОРИЙ
-        </span>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     SOCIAL
-===================================================== -->
-
-<section class="social section-pad">
-
-
-    <div class="section-head reveal">
-
-
-        <div>
-
-            <span class="section-label">
-
-                СОЦИАЛЬНЫЕ СЕТИ
-                /
-                06
-
-            </span>
-
-
-            <h2>
-
-                СЛЕДИТЕ<br>
-
-                ЗА РАБОТОЙ
-
-            </h2>
-
-        </div>
-
-
-        <a
-            class="inline-link"
-            href="https://instagram.com/"
-            target="_blank"
-            rel="noopener"
-        >
-
-            МОЙ INSTAGRAM →
-
-        </a>
-
-
-    </div>
-
-
-
-    <div class="social-grid">
-
-
-        <button
-            class="social-photo reveal lightbox-trigger"
-            data-index="0"
-        >
-
-            <img
-                loading="lazy"
-                alt="Кинематографичная фотография"
-                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
-            >
-
-        </button>
-
-
-        <button
-            class="social-photo reveal lightbox-trigger"
-            data-index="1"
-        >
-
-            <img
-                loading="lazy"
-                alt="Кинематографичная фотография"
-                src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85"
-            >
-
-        </button>
-
-
-        <button
-            class="social-photo reveal lightbox-trigger"
-            data-index="2"
-        >
-
-            <img
-                loading="lazy"
-                alt="Кинематографичная фотография"
-                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=85"
-            >
-
-        </button>
-
-
-        <button
-            class="social-photo reveal lightbox-trigger"
-            data-index="3"
-        >
-
-            <img
-                loading="lazy"
-                alt="Кинематографичная фотография"
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
-            >
-
-        </button>
-
-
-        <button
-            class="social-photo reveal lightbox-trigger"
-            data-index="4"
-        >
-
-            <img
-                loading="lazy"
-                alt="Кинематографичная фотография"
-                src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=85"
-            >
-
-        </button>
-
-
-        <button
-            class="social-photo reveal lightbox-trigger"
-            data-index="5"
-        >
-
-            <img
-                loading="lazy"
-                alt="Кинематографичная фотография"
-                src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85"
-            >
-
-        </button>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section
-    class="contact section-pad"
-    id="contact"
->
-
-
-    <div class="contact-main reveal">
-
-
-        <span class="section-label">
-
-            07
-            /
-            КОНТАКТЫ
-
-        </span>
-
-
-        <h2>
-
-            СОЗДАДИМ<br>
-
-            ЧТО-ТО<br>
-
-            <em>
-                НЕЗАБЫВАЕМОЕ.
-            </em>
-
-        </h2>
-
-
-        <p>
-
-            Есть идея для проекта?<br>
-
-            Давайте обсудим её.
-
-        </p>
-
-
-        <a
-            class="button button-light large"
-            href="#inquiry"
-        >
-
-            НАЧАТЬ ПРОЕКТ
-
-            <span>
-                →
-            </span>
-
-        </a>
-
-
-    </div>
-
-
-
-    <!-- CONTACT LINKS -->
-
-    <div class="contact-links reveal">
-
-
-        <a
-            href="https://instagram.com/"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <span>
-                INSTAGRAM
-            </span>
-
-            <b>
-                ↗
-            </b>
-
-        </a>
-
-
-        <a
-            href="https://t.me/"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <span>
-                TELEGRAM
-            </span>
-
-            <b>
-                ↗
-            </b>
-
-        </a>
-
-
-        <a
-            href="https://wa.me/"
-            target="_blank"
-            rel="noopener"
-        >
-
-            <span>
-                WHATSAPP
-            </span>
-
-            <b>
-                ↗
-            </b>
-
-        </a>
-
-
-        <a
-            href="mailto:hello@alexfilm.com"
-        >
-
-            <span>
-                EMAIL
-            </span>
-
-            <b>
-                ↗
-            </b>
-
-        </a>
-
-
-    </div>
-
-
-
-    <!-- =================================================
-         FORM
-    ================================================= -->
-
-    <form
-        class="inquiry reveal"
-        id="inquiry"
-        novalidate
-    >
-
-
-        <div class="form-row">
-
-
-            <label>
-
-                ИМЯ
-
-                <input
-                    name="name"
-                    type="text"
-                    placeholder="Ваше имя"
-                    required
-                >
-
-            </label>
-
-
-            <label>
-
-                EMAIL / TELEGRAM
-
-                <input
-                    name="contact"
-                    type="text"
-                    placeholder="@username или email"
-                    required
-                >
-
-            </label>
-
-
-        </div>
-
-
-
-        <div class="form-row">
-
-
-            <label>
-
-                ТИП ПРОЕКТА
-
-                <select
-                    name="type"
-                    required
-                >
-
-                    <option value="">
-                        Выберите тип проекта
-                    </option>
-
-                    <option>
-                        Рекламный ролик
-                    </option>
-
-                    <option>
-                        Автомобильная съёмка
-                    </option>
-
-                    <option>
-                        Мероприятие
-                    </option>
-
-                    <option>
-                        Контент для социальных сетей
-                    </option>
-
-                    <option>
-                        Музыкальный клип
-                    </option>
-
-                    <option>
-                        Монтаж
-                    </option>
-
-                </select>
-
-            </label>
-
-
-            <label>
-
-                БЮДЖЕТ
-
-                <select
-                    name="budget"
-                    required
-                >
-
-                    <option value="">
-                        Выберите бюджет
-                    </option>
-
-                    <option>
-                        $300 — $700
-                    </option>
-
-                    <option>
-                        $700 — $1 500
-                    </option>
-
-                    <option>
-                        $1 500 — $3 000
-                    </option>
-
-                    <option>
-                        $3 000+
-                    </option>
-
-                </select>
-
-            </label>
-
-
-        </div>
-
-
-
-        <label>
-
-            СООБЩЕНИЕ
-
-            <textarea
-                name="message"
-                rows="5"
-                placeholder="Расскажите о вашем проекте..."
-                required
-            ></textarea>
-
-        </label>
-
-
-
-        <button
-            class="button button-light submit"
-            type="submit"
-        >
-
-            ОТПРАВИТЬ ЗАПРОС
-
-            <span>
-                →
-            </span>
-
-        </button>
-
-
-        <p
-            class="form-status"
-            aria-live="polite"
-        ></p>
-
-
-    </form>
-
-
-</section>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
+    <strong>
+        AXADOVSEVEN
+    </strong>
+
     <span>
-        ALEX / FILM
+        © 2026
     </span>
 
     <span>
-        © 2026 ВСЕ ПРАВА ЗАЩИЩЕНЫ
-    </span>
-
-    <span>
-        СОЗДАНО ДЛЯ ДВИЖЕНИЯ
+        VISUAL CREATOR
     </span>
 
 </footer>
 
-
-
-<!-- =====================================================
-     LIGHTBOX
-===================================================== -->
-
-<div
-    class="lightbox"
-    id="lightbox"
-    aria-hidden="true"
->
-
-
-    <button
-        class="lb-close"
-        aria-label="Закрыть"
-    >
-        ×
-    </button>
-
-
-    <button
-        class="lb-prev"
-        aria-label="Предыдущий проект"
-    >
-        ←
-    </button>
-
-
-    <div class="lb-content">
-
-
-        <img
-            id="lbImage"
-            alt=""
-        >
-
-
-        <video
-            id="lbVideo"
-            controls
-            playsinline
-        ></video>
-
-
-        <div class="lb-meta">
-
-
-            <div>
-
-                <strong id="lbTitle">
-                    ПРОЕКТ
-                </strong>
-
-                <span id="lbCategory">
-                    КАТЕГОРИЯ
-                </span>
-
-            </div>
-
-
-            <span id="lbCounter">
-                01 / 06
-            </span>
-
-
-        </div>
-
-
-    </div>
-
-
-    <button
-        class="lb-next"
-        aria-label="Следующий проект"
-    >
-        →
-    </button>
-
-
-</div>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
 
 <script src="script.js"></script>
 
