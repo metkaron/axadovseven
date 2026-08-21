@@ -1093,3 +1093,22 @@ footer strong {
         margin-top: 45px;
     }
 }
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 80px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+@media (max-width: 800px) {
+    .brand img {
+        width: 120px;
+    }
+}
