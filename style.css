@@ -1330,3 +1330,1157 @@ footer strong {
     }
 
 }
+
+/* =========================
+   JS ANIMATIONS
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   LIGHTBOX IMAGE
+========================= */
+
+#lightbox-img {
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+#lightbox-img.switching {
+    opacity: 0;
+    transform: scale(.97);
+}
+
+
+/* =========================
+   CUSTOM CURSOR
+========================= */
+
+.cursor {
+    position: fixed;
+
+    width: 12px;
+    height: 12px;
+
+    border: 1px solid #fff;
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    transition:
+        width .25s ease,
+        height .25s ease,
+        background .25s ease;
+
+    mix-blend-mode: difference;
+}
+
+.cursor.active {
+    width: 45px;
+    height: 45px;
+
+    background: #fff;
+}
+
+
+/* =========================
+   BACK TOP
+========================= */
+
+.back-top {
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid #333;
+
+    background: rgba(10,10,10,.8);
+
+    color: #fff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 500;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease,
+        transform .3s ease,
+        background .3s ease;
+}
+
+.back-top.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.back-top:hover {
+    background: #fff;
+    color: #000;
+}
+
+
+/* =========================
+   NAV ACTIVE
+========================= */
+
+.desktop-nav a.active {
+    opacity: 1;
+}
+
+.desktop-nav a {
+    position: relative;
+}
+
+.desktop-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: #fff;
+
+    transition: width .3s ease;
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+    width: 100%;
+}
+
+
+/* =========================
+   MODAL PHOTO NUMBER
+========================= */
+
+.modal-photo {
+    position: relative;
+}
+
+.photo-number {
+    position: absolute;
+
+    left: 15px;
+    bottom: 15px;
+
+    padding: 6px 9px;
+
+    background: rgba(0,0,0,.55);
+
+    backdrop-filter: blur(8px);
+
+    color: #fff;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.modal-photo:hover .photo-number {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   IMAGE ERROR
+========================= */
+
+.image-error {
+    opacity: .25;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .cursor {
+        display: none;
+    }
+
+    .back-top {
+        width: 44px;
+        height: 44px;
+
+        right: 18px;
+        bottom: 18px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+}
+
+/* =========================================================
+   PREMIUM ANIMATIONS / SMOOTH UI
+========================================================= */
+
+/* Плавность страницы */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Более приятное выделение */
+::selection {
+    background: #fff;
+    color: #000;
+}
+
+
+/* =========================================================
+   PAGE LOAD
+========================================================= */
+
+body {
+    animation: pageEnter 1s ease both;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    transition:
+        background .4s ease,
+        backdrop-filter .4s ease,
+        transform .4s ease;
+}
+
+
+/* Логотип */
+
+.logo,
+.brand {
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.logo:hover,
+.brand:hover {
+    opacity: .75;
+    transform: translateY(-2px);
+}
+
+
+/* Навигация */
+
+.desktop-nav a {
+    position: relative;
+
+    transition:
+        opacity .3s ease,
+        color .3s ease;
+}
+
+.desktop-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: #fff;
+
+    transition: width .35s cubic-bezier(.2,.7,.2,1);
+}
+
+.desktop-nav a:hover {
+    opacity: 1;
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Кнопка header */
+
+.header-button {
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.header-button:hover {
+    opacity: .6;
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-bg {
+    transition:
+        transform 1.5s cubic-bezier(.2,.7,.2,1);
+}
+
+.hero:hover .hero-bg {
+    transform: scale(1.04);
+}
+
+
+.hero-overlay {
+    transition:
+        opacity 1s ease;
+}
+
+
+.hero-content {
+    animation:
+        heroContent 1.2s cubic-bezier(.2,.7,.2,1) both;
+
+    animation-delay: .15s;
+}
+
+@keyframes heroContent {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.hero-label {
+    animation:
+        heroLabel 1s ease both;
+
+    animation-delay: .3s;
+}
+
+@keyframes heroLabel {
+
+    from {
+        opacity: 0;
+        letter-spacing: 8px;
+    }
+
+    to {
+        opacity: .65;
+        letter-spacing: 3px;
+    }
+
+}
+
+
+/* Hero title */
+
+.hero h1 {
+    transition:
+        transform .6s ease;
+}
+
+.hero h1:hover {
+    transform: translateX(5px);
+}
+
+
+/* Hero button */
+
+.hero-button {
+    position: relative;
+
+    transition:
+        color .3s ease,
+        padding-left .3s ease;
+}
+
+.hero-button::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -1px;
+
+    width: 0;
+    height: 1px;
+
+    background: #fff;
+
+    transition: width .4s ease;
+}
+
+.hero-button:hover {
+    padding-left: 8px;
+}
+
+.hero-button:hover::before {
+    width: 100%;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-text p {
+    transition:
+        transform .5s cubic-bezier(.2,.7,.2,1),
+        opacity .4s ease;
+}
+
+.intro-text p:hover {
+    transform: translateX(12px);
+}
+
+
+/* =========================================================
+   WORK
+========================================================= */
+
+.work {
+    overflow: hidden;
+}
+
+
+/* Заголовок */
+
+.work-header h2 {
+    transition:
+        transform .5s ease;
+}
+
+.work-header h2:hover {
+    transform: translateX(8px);
+}
+
+
+/* =========================================================
+   ALBUMS
+========================================================= */
+
+.albums {
+    perspective: 1200px;
+}
+
+
+.album {
+    transition:
+        transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.album:hover {
+    transform: translateY(-8px);
+}
+
+
+/* Фото альбома */
+
+.album-image {
+    overflow: hidden;
+
+    transition:
+        box-shadow .5s ease;
+}
+
+.album:hover .album-image {
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45);
+}
+
+
+.album-image img {
+    transition:
+        transform 1s cubic-bezier(.16,1,.3,1),
+        filter .6s ease;
+}
+
+.album:hover .album-image img {
+    transform: scale(1.07);
+    filter: brightness(1.08);
+}
+
+
+/* Затемнение */
+
+.album-overlay {
+    transition:
+        opacity .6s ease;
+}
+
+.album:hover .album-overlay {
+    opacity: .75;
+}
+
+
+/* Текст альбома */
+
+.album-info {
+    transition:
+        transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.album:hover .album-info {
+    transform: translateY(-8px);
+}
+
+
+.album-info h3 {
+    transition:
+        letter-spacing .5s ease;
+}
+
+.album:hover .album-info h3 {
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-image {
+    overflow: hidden;
+}
+
+.about-image img {
+    transition:
+        transform 1.2s cubic-bezier(.16,1,.3,1),
+        filter .7s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.08);
+}
+
+
+.about-content h2 span {
+    transition:
+        color .4s ease,
+        -webkit-text-stroke .4s ease;
+}
+
+.about-content h2 span:hover {
+    color: #315a91;
+}
+
+
+/* Stats */
+
+.stat {
+    transition:
+        transform .4s ease,
+        opacity .4s ease;
+}
+
+.stat:hover {
+    transform: translateY(-7px);
+}
+
+.stat strong {
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.stat:hover strong {
+    color: #426b9f;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-left h2 {
+    transition:
+        transform .5s ease;
+}
+
+.contact-left h2:hover {
+    transform: translateX(6px);
+}
+
+
+.project-button {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        background .5s ease,
+        color .5s ease,
+        transform .4s cubic-bezier(.2,.7,.2,1),
+        border-color .4s ease;
+}
+
+.project-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: #fff;
+
+    transition:
+        left .5s cubic-bezier(.2,.7,.2,1);
+
+    z-index: 0;
+}
+
+.project-button span,
+.project-button strong {
+    position: relative;
+    z-index: 1;
+}
+
+.project-button:hover::before {
+    left: 0;
+}
+
+.project-button:hover {
+    color: #000;
+
+    transform:
+        translateY(-5px);
+}
+
+
+.project-button strong {
+    transition:
+        transform .4s ease;
+}
+
+.project-button:hover strong {
+    transform:
+        translate(7px,-7px);
+}
+
+
+/* Соцсети */
+
+.contact-list a {
+    transition:
+        padding-left .4s ease,
+        color .3s ease;
+}
+
+.contact-list a:hover {
+    padding-left: 10px;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.album-modal {
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .45s ease,
+        transform .45s cubic-bezier(.2,.7,.2,1);
+}
+
+.album-modal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* Header modal */
+
+.modal-header {
+    transition:
+        background .3s ease;
+}
+
+
+.modal-header button {
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.modal-header button:hover {
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.modal-photo {
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform .45s cubic-bezier(.2,.7,.2,1),
+        opacity .4s ease;
+}
+
+.modal-photo:hover {
+    transform:
+        translateY(-5px);
+}
+
+
+.modal-photo img {
+    transition:
+        transform .8s cubic-bezier(.16,1,.3,1),
+        filter .5s ease;
+}
+
+.modal-photo:hover img {
+    transform: scale(1.05);
+
+    filter: brightness(1.08);
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox {
+    opacity: 0;
+
+    transition:
+        opacity .4s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+}
+
+
+.lightbox-content {
+    transform:
+        scale(.96);
+
+    transition:
+        transform .5s cubic-bezier(.16,1,.3,1);
+}
+
+.lightbox.active .lightbox-content {
+    transform:
+        scale(1);
+}
+
+
+#lightbox-img {
+    transition:
+        opacity .3s ease,
+        transform .4s ease;
+}
+
+
+/* Кнопки */
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        color .3s ease;
+}
+
+.lightbox-close:hover {
+    transform:
+        rotate(90deg);
+}
+
+.lightbox-prev:hover {
+    transform:
+        translateX(-5px);
+}
+
+.lightbox-next:hover {
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    transition:
+        opacity .4s ease;
+}
+
+footer strong {
+    transition:
+        opacity .3s ease;
+}
+
+footer strong:hover {
+    opacity: .6;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+    opacity: 0;
+
+    transform:
+        translateY(-20px);
+
+    transition:
+        opacity .4s ease,
+        transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.mobile-menu.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+.mobile-menu a {
+    transition:
+        transform .4s ease,
+        opacity .3s ease;
+}
+
+.mobile-menu a:hover {
+    transform:
+        translateX(10px);
+}
+
+
+/* =========================================================
+   IMAGE LOADING
+========================================================= */
+
+img {
+    background: #0b0b0b;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+
+    border-radius: 10px;
+
+    transition: background .3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .album:hover {
+        transform: none;
+    }
+
+    .album:hover .album-image img {
+        transform: none;
+        filter: none;
+    }
+
+    .about-image:hover img {
+        transform: none;
+    }
+
+    .project-button:hover {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* =========================
+   FOOD ALBUM
+========================= */
+
+.album.food {
+    position: relative;
+}
+
+.album.food .album-image {
+    background: #111;
+}
+
+.album.food .album-image img {
+    object-fit: cover;
+    transition:
+        transform 1s cubic-bezier(.16, 1, .3, 1),
+        filter .6s ease;
+}
+
+.album.food:hover .album-image img {
+    transform: scale(1.07);
+    filter: brightness(1.08) saturate(1.08);
+}
+
+.album.food .album-overlay {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, .15),
+            rgba(0, 0, 0, .82)
+        );
+}
+
+.album.food .album-info {
+    transition:
+        transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+
+.album.food:hover .album-info {
+    transform: translateY(-8px);
+}
+
+.album.food .album-info small {
+    color: #aaa;
+    letter-spacing: 3px;
+}
+
+.album.food .album-info h3 {
+    transition:
+        letter-spacing .4s ease;
+}
+
+.album.food:hover .album-info h3 {
+    letter-spacing: 0;
+}
+
+@media (max-width: 800px) {
+
+    .album.food:hover .album-image img {
+        transform: none;
+        filter: none;
+    }
+
+}
+
+/* =========================
+   VIDEO ALBUM
+========================= */
+
+.album.video .album-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.album.video .album-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition:
+        transform 1s cubic-bezier(.16,1,.3,1),
+        filter .6s ease;
+}
+
+.album.video:hover .album-image video {
+    transform: scale(1.06);
+    filter: brightness(1.08);
+}
+
+.album.video .album-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.album.video .album-info,
+.album.video .album-number,
+.album.video .album-count {
+    z-index: 2;
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: rgba(5, 5, 5, 0.75);
+    backdrop-filter: blur(15px);
+
+    color: #fff;
+    font-size: 22px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease,
+        transform .35s ease,
+        background .3s ease,
+        color .3s ease;
+    
+    z-index: 1500;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 600px) {
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 19px;
+    }
+}
