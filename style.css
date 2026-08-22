@@ -2239,6 +2239,65 @@ footer strong:hover {
         translateX(10px);
 }
 
+/* ================= MOBILE LOGO ================= */
+
+@media (max-width: 800px) {
+
+    .brand {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .brand img {
+        width: 72px;
+        height: 72px;
+        object-fit: contain;
+
+        transition: transform .35s ease,
+                    opacity .35s ease;
+    }
+
+    .brand:active img {
+        transform: scale(.92);
+        opacity: .8;
+    }
+
+}
+
+
+/* МАЛЕНЬКИЕ ТЕЛЕФОНЫ */
+
+@media (max-width: 480px) {
+
+    .header {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .brand img {
+        width: 62px;
+        height: 62px;
+    }
+
+}
+
+
+/* ОЧЕНЬ УЗКИЕ ЭКРАНЫ */
+
+@media (max-width: 360px) {
+
+    .header {
+        padding: 0 16px;
+    }
+
+    .brand img {
+        width: 56px;
+        height: 56px;
+    }
+
+}
+
 
 /* =========================================================
    IMAGE LOADING
