@@ -1,6 +1,12 @@
+"use strict";
+
 /* =========================================================
-   ALBUMS
+   AXADOVSEVEN — SCRIPT
 ========================================================= */
+
+/* =========================
+   ALBUMS
+========================= */
 
 const albums = {
     cars: {
@@ -47,17 +53,37 @@ const albums = {
         title: "ВИДЕО",
         category: "VIDEO",
         folder: "assets/video/",
-        prefix: "video",
-        count: 20,
-        extension: "mp4",
-        type: "video"
+        type: "video",
+        files: [
+            "video-01.mp4",
+            "video-02.mp4",
+            "video-03.mp4",
+            "video-04.mp4",
+            "video-05.mp4",
+            "video-06.mp4",
+            "video-07.mp4",
+            "video-08.mp4",
+            "video-09.mp4",
+            "video-10.mp4",
+            "video-11.mp4",
+            "video-12.mp4",
+            "video-13.mp4",
+            "video-14.mp4",
+            "video-15.mp4",
+            "video-16.mp4",
+            "video-17.mp4",
+            "video-18.mp4",
+            "video-19.mp4"
+        ]
     }
 };
 
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
+/* =========================
+   DOM
+========================= */
+
+const body = document.body;
 
 const albumModal = document.getElementById("albumModal");
 const modalGallery = document.getElementById("modalGallery");
@@ -67,127 +93,116 @@ const modalClose = document.getElementById("modalClose");
 
 const lightbox = document.getElementById("lightbox");
 const lightboxContent = document.querySelector(".lightbox-content");
+const lightboxInfo = document.getElementById("lightboxInfo");
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
 
-const lightboxImg = document.getElementById("lightboxImg");
-const lightboxInfo = document.querySelector(".lightbox-info");
-
-const lightboxClose = document.querySelector(".lightbox-close");
-const lightboxPrev = document.querySelector(".lightbox-prev");
-const lightboxNext = document.querySelector(".lightbox-next");
-
-const burger = document.querySelector(".burger");
-const mobileMenu = document.querySelector(".mobile-menu");
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+const backToTop = document.getElementById("backToTop");
 
 
-/* =========================================================
-   CURRENT ALBUM
-========================================================= */
+/* =========================
+   STATE
+========================= */
 
 let currentAlbum = null;
 let currentItems = [];
 let currentIndex = 0;
 
 
-/* =========================================================
-   CREATE FILE PATH
-========================================================= */
+/* =========================
+   HELPERS
+========================= */
 
-function getFilePath(album, number) {
-
-    const formattedNumber = String(number).padStart(2, "0");
-
-    return `${album.folder}${album.prefix}-${formattedNumber}.${album.extension}`;
+function pad(number) {
+    return String(number).padStart(2, "0");
 }
 
 
-/* =========================================================
-   OPEN ALBUM
-========================================================= */
+function getImagePath(album, number) {
+    return `${album.folder}${album.prefix}-${pad(number)}.${album.extension}`;
+}
 
-function openAlbum(albumKey) {
 
+function getItems(albumKey) {
     const album = albums[albumKey];
 
     if (!album) {
-        console.error("Альбом не найден:", albumKey);
+        return [];
+    }
+
+    if (album.type === "video") {
+        return album.files.map(file => ({
+            type: "video",
+            src: `${album.folder}${file}`
+        }));
+    }
+
+    const items = [];
+
+    for (let i = 1; i <= album.count; i++) {
+        items.push({
+            type: "image",
+            src: getImagePath(album, i)
+        });
+    }
+
+    return items;
+}
+
+
+/* =========================
+   OPEN ALBUM
+========================= */
+
+function openAlbum(albumKey) {
+    const album = albums[albumKey];
+
+    if (!album || !albumModal || !modalGallery) {
+        console.error("Не удалось открыть альбом:", albumKey);
         return;
     }
 
     currentAlbum = albumKey;
+    currentItems = getItems(albumKey);
+    currentIndex = 0;
 
     modalGallery.innerHTML = "";
 
-    if (modalTitle) {
-        modalTitle.textContent = album.title;
-    }
+    modalTitle.textContent = album.title;
+    modalCategory.textContent = album.category;
 
-    if (modalCategory) {
-        modalCategory.textContent = album.category;
-    }
+    currentItems.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "modal-photo";
 
-    currentItems = [];
-
-
-    /* =========================
-       CREATE ITEMS
-    ========================= */
-
-    for (let i = 1; i <= album.count; i++) {
-
-        const src = getFilePath(album, i);
-
-        currentItems.push(src);
-
-
-        const item = document.createElement("div");
-
-        item.className = "modal-photo";
-
-        item.dataset.index = i - 1;
-
-
-        /* =========================
-           IMAGE
-        ========================= */
-
-        if (album.type === "image") {
-
+        /* IMAGE */
+        if (item.type === "image") {
             const img = document.createElement("img");
 
-            img.src = src;
-            img.alt = `${album.title} ${i}`;
+            img.src = item.src;
+            img.alt = `${album.title} ${index + 1}`;
             img.loading = "lazy";
 
-            img.onerror = function () {
-                console.warn("Не найден файл:", src);
-                item.classList.add("file-error");
-            };
-
-            item.appendChild(img);
-
-
-            item.addEventListener("click", () => {
-                openLightbox(i - 1);
+            img.addEventListener("error", () => {
+                console.error("Фото не найдено:", item.src);
+                card.remove();
             });
 
+            card.appendChild(img);
         }
 
-
-        /* =========================
-           VIDEO
-        ========================= */
-
-        if (album.type === "video") {
-
+        /* VIDEO */
+        if (item.type === "video") {
             const video = document.createElement("video");
 
-            video.src = src;
-
+            video.src = item.src;
             video.muted = true;
             video.loop = true;
             video.playsInline = true;
             video.preload = "metadata";
-
             video.controls = false;
 
             video.addEventListener("mouseenter", () => {
@@ -198,31 +213,23 @@ function openAlbum(albumKey) {
                 video.pause();
             });
 
-            video.onerror = function () {
-                console.warn("Не найдено видео:", src);
-                item.classList.add("file-error");
-            };
-
-            item.appendChild(video);
-
-
-            item.addEventListener("click", () => {
-                openLightbox(i - 1);
+            video.addEventListener("error", () => {
+                console.error("Видео не найдено:", item.src);
+                card.classList.add("file-error");
             });
+
+            card.appendChild(video);
         }
 
+        card.addEventListener("click", () => {
+            openLightbox(index);
+        });
 
-        modalGallery.appendChild(item);
-    }
-
-
-    /* =========================
-       OPEN MODAL
-    ========================= */
+        modalGallery.appendChild(card);
+    });
 
     albumModal.classList.add("active");
-
-    document.body.classList.add("modal-open");
+    body.classList.add("modal-open");
 
     albumModal.scrollTop = 0;
 
@@ -234,144 +241,122 @@ function openAlbum(albumKey) {
 }
 
 
-/* =========================================================
+/* =========================
    CLOSE ALBUM
-========================================================= */
+========================= */
 
 function closeAlbum() {
-
-    if (!albumModal) return;
+    if (!albumModal) {
+        return;
+    }
 
     albumModal.classList.remove("active");
 
-    document.body.classList.remove("modal-open");
-
     closeLightbox();
 
-    if (location.hash) {
-        history.pushState(
-            "",
-            document.title,
-            window.location.pathname + window.location.search
-        );
-    }
+    body.classList.remove("modal-open");
+
+    currentAlbum = null;
+    currentItems = [];
+    currentIndex = 0;
+
+    history.replaceState(
+        null,
+        document.title,
+        window.location.pathname + window.location.search
+    );
 }
 
 
-/* =========================================================
-   LIGHTBOX
-========================================================= */
+/* =========================
+   OPEN LIGHTBOX
+========================= */
 
 function openLightbox(index) {
+    const item = currentItems[index];
 
-    if (!currentAlbum) return;
-
-    const album = albums[currentAlbum];
+    if (!item || !lightbox || !lightboxContent) {
+        return;
+    }
 
     currentIndex = index;
 
-    const src = currentItems[index];
+    lightboxContent.innerHTML = "";
 
-    if (!src) return;
-
-
-    /* Очистка */
-
-    if (lightboxContent) {
-        lightboxContent.innerHTML = "";
-    }
-
-
-    /* =========================
-       IMAGE LIGHTBOX
-    ========================= */
-
-    if (album.type === "image") {
-
+    /* IMAGE */
+    if (item.type === "image") {
         const img = document.createElement("img");
 
-        img.src = src;
-
-        img.alt = album.title;
-
-        img.id = "lightboxDynamicImage";
-
-        img.style.maxWidth = "85vw";
-        img.style.maxHeight = "80vh";
-        img.style.width = "auto";
-        img.style.height = "auto";
-        img.style.objectFit = "contain";
+        img.src = item.src;
+        img.alt = albums[currentAlbum].title;
 
         lightboxContent.appendChild(img);
     }
 
-
-    /* =========================
-       VIDEO LIGHTBOX
-    ========================= */
-
-    if (album.type === "video") {
-
+    /* VIDEO */
+    if (item.type === "video") {
         const video = document.createElement("video");
 
-        video.src = src;
-
+        video.src = item.src;
         video.controls = true;
-
         video.autoplay = true;
-
         video.playsInline = true;
+        video.preload = "auto";
 
-        video.style.maxWidth = "85vw";
-        video.style.maxHeight = "80vh";
+        video.addEventListener("error", () => {
+            console.error("Ошибка видео:", item.src);
+        });
 
         lightboxContent.appendChild(video);
 
         video.play().catch(() => {});
     }
 
+    const album = albums[currentAlbum];
 
-    /* INFO */
-
-    if (lightboxInfo) {
-
-        lightboxInfo.innerHTML = `
-            <span>${String(index + 1).padStart(2, "0")}</span>
-            <span>${album.title}</span>
-            <span>${String(album.count).padStart(2, "0")}</span>
-        `;
-    }
-
-
-    /* OPEN */
+    lightboxInfo.innerHTML = `
+        <span>${pad(currentIndex + 1)}</span>
+        <span>${album.title}</span>
+        <span>${pad(currentItems.length)}</span>
+    `;
 
     lightbox.classList.add("active");
+    body.classList.add("modal-open");
 }
 
 
-/* =========================================================
+/* =========================
    CLOSE LIGHTBOX
-========================================================= */
+========================= */
 
 function closeLightbox() {
-
-    if (!lightbox) return;
+    if (!lightbox) {
+        return;
+    }
 
     lightbox.classList.remove("active");
 
     if (lightboxContent) {
         lightboxContent.innerHTML = "";
     }
+
+    if (
+        !albumModal ||
+        !albumModal.classList.contains("active")
+    ) {
+        body.classList.remove("modal-open");
+    }
 }
 
 
-/* =========================================================
+/* =========================
    NEXT
-========================================================= */
+========================= */
 
 function nextItem() {
-
-    if (!currentItems.length) return;
+    if (!currentItems.length) {
+        return;
+    }
 
     currentIndex++;
 
@@ -383,13 +368,14 @@ function nextItem() {
 }
 
 
-/* =========================================================
+/* =========================
    PREVIOUS
-========================================================= */
+========================= */
 
 function prevItem() {
-
-    if (!currentItems.length) return;
+    if (!currentItems.length) {
+        return;
+    }
 
     currentIndex--;
 
@@ -401,22 +387,20 @@ function prevItem() {
 }
 
 
-/* =========================================================
+/* =========================
    ALBUM CLICK
-========================================================= */
+========================= */
 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", event => {
+    const album = event.target.closest(".album");
 
-    const albumElement = event.target.closest(".album");
+    if (!album) {
+        return;
+    }
 
-    if (!albumElement) return;
+    const albumKey = album.dataset.album;
 
-    const albumKey = albumElement.dataset.album;
-
-    if (!albumKey) {
-        console.warn(
-            "У карточки .album нет data-album"
-        );
+    if (!albumKey || !albums[albumKey]) {
         return;
     }
 
@@ -424,86 +408,57 @@ document.addEventListener("click", function (event) {
 });
 
 
-/* =========================================================
-   CLOSE BUTTON
-========================================================= */
+/* =========================
+   BUTTONS
+========================= */
 
 if (modalClose) {
-
-    modalClose.addEventListener("click", () => {
-        closeAlbum();
-    });
+    modalClose.addEventListener("click", closeAlbum);
 }
-
-
-/* =========================================================
-   LIGHTBOX BUTTONS
-========================================================= */
 
 if (lightboxClose) {
-
-    lightboxClose.addEventListener("click", () => {
-        closeLightbox();
-    });
+    lightboxClose.addEventListener("click", closeLightbox);
 }
-
 
 if (lightboxNext) {
-
-    lightboxNext.addEventListener("click", () => {
-        nextItem();
-    });
+    lightboxNext.addEventListener("click", nextItem);
 }
-
 
 if (lightboxPrev) {
-
-    lightboxPrev.addEventListener("click", () => {
-        prevItem();
-    });
+    lightboxPrev.addEventListener("click", prevItem);
 }
 
 
-/* =========================================================
-   CLICK OUTSIDE LIGHTBOX
-========================================================= */
+/* =========================
+   LIGHTBOX BACKGROUND
+========================= */
 
 if (lightbox) {
-
-    lightbox.addEventListener("click", function (event) {
-
+    lightbox.addEventListener("click", event => {
         if (event.target === lightbox) {
             closeLightbox();
         }
-
     });
 }
 
 
-/* =========================================================
-   ESC / ARROWS
-========================================================= */
+/* =========================
+   KEYBOARD
+========================= */
 
-document.addEventListener("keydown", function (event) {
-
+document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
-
-        if (lightbox.classList.contains("active")) {
+        if (lightbox?.classList.contains("active")) {
             closeLightbox();
             return;
         }
 
-        if (albumModal.classList.contains("active")) {
+        if (albumModal?.classList.contains("active")) {
             closeAlbum();
         }
     }
 
-
-    if (
-        lightbox &&
-        lightbox.classList.contains("active")
-    ) {
-
+    if (lightbox?.classList.contains("active")) {
         if (event.key === "ArrowRight") {
             nextItem();
         }
@@ -515,156 +470,144 @@ document.addEventListener("keydown", function (event) {
 });
 
 
-/* =========================================================
+/* =========================
+   TOUCH SWIPE
+========================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+if (lightbox) {
+    lightbox.addEventListener("touchstart", event => {
+        touchStartX =
+            event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener("touchend", event => {
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        const distance =
+            touchStartX - touchEndX;
+
+        if (Math.abs(distance) < 50) {
+            return;
+        }
+
+        if (distance > 0) {
+            nextItem();
+        } else {
+            prevItem();
+        }
+    }, { passive: true });
+}
+
+
+/* =========================
    MOBILE MENU
-========================================================= */
+========================= */
 
 if (burger && mobileMenu) {
-
     burger.addEventListener("click", () => {
-
-        mobileMenu.classList.toggle("active");
-
         burger.classList.toggle("active");
-
+        mobileMenu.classList.toggle("active");
     });
 
-
     mobileMenu.querySelectorAll("a").forEach(link => {
-
         link.addEventListener("click", () => {
-
-            mobileMenu.classList.remove("active");
-
             burger.classList.remove("active");
-
+            mobileMenu.classList.remove("active");
         });
-
     });
 }
 
 
-/* =========================================================
-   SMOOTH NAVIGATION
-========================================================= */
+/* =========================
+   BACK TO TOP
+========================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", function (event) {
-
-        const targetId = this.getAttribute("href");
-
-        if (
-            !targetId ||
-            targetId === "#" ||
-            targetId.length < 2
-        ) {
-            return;
+if (backToTop) {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+            backToTop.classList.add("active");
+        } else {
+            backToTop.classList.remove("active");
         }
+    }, { passive: true });
 
-        const target = document.querySelector(targetId);
-
-        if (!target) return;
-
-        event.preventDefault();
-
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
         });
-
     });
+}
 
-});
 
-
-/* =========================================================
+/* =========================
    HASH OPEN
-========================================================= */
+========================= */
 
 window.addEventListener("load", () => {
+    const hash =
+        window.location.hash.replace("#", "");
 
-    const hash = window.location.hash.replace("#", "");
-
-    if (albums[hash]) {
+    if (hash && albums[hash]) {
         openAlbum(hash);
     }
-
 });
 
 
-/* =========================================================
-   BROWSER BACK
-========================================================= */
+/* =========================
+   BROWSER HISTORY
+========================= */
 
 window.addEventListener("popstate", () => {
+    const hash =
+        window.location.hash.replace("#", "");
 
-    if (!window.location.hash) {
-        closeAlbum();
-        return;
-    }
-
-    const hash = window.location.hash.replace("#", "");
-
-    if (albums[hash]) {
+    if (hash && albums[hash]) {
         openAlbum(hash);
+    } else {
+        closeAlbum();
     }
 });
 
 
-/* =========================================================
-   DISABLE BROKEN IMAGE VISUAL
-========================================================= */
+/* =========================
+   VIDEO STYLES
+========================= */
 
-const errorStyle = document.createElement("style");
+const dynamicStyle =
+    document.createElement("style");
 
-errorStyle.textContent = `
-    .modal-photo.file-error {
-        display: none;
-    }
-
+dynamicStyle.textContent = `
     .modal-photo video {
         width: 100%;
         height: 100%;
         min-height: 300px;
         object-fit: cover;
         display: block;
-        background: #111;
+        background: #000;
     }
 
     .lightbox-content video {
-        display: block;
+        width: auto;
+        max-width: 85vw;
+        max-height: 80vh;
         background: #000;
+    }
+
+    .modal-photo.file-error {
+        display: none !important;
     }
 `;
 
-document.head.appendChild(errorStyle);
+document.head.appendChild(dynamicStyle);
 
-
-/* =========================================================
-   READY
-========================================================= */
-
-console.log("AXADOVSEVEN website loaded");
-console.log("Albums:", albums);
 
 /* =========================
-   BACK TO TOP
+   READY
 ========================= */
 
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-        backToTop.classList.add("active");
-    } else {
-        backToTop.classList.remove("active");
-    }
-});
-
-backToTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
+console.log("AXADOVSEVEN ready");
