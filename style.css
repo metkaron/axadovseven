@@ -2543,3 +2543,108 @@ img {
         font-size: 19px;
     }
 }
+
+/* =========================================================
+   FIX — ALBUM CATEGORIES
+========================================================= */
+
+.albums {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    width: 100%;
+}
+
+.album {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.album-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 620px;
+    overflow: hidden;
+    background: #111;
+}
+
+.album-image img,
+.album-image video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 620px;
+    object-fit: cover;
+}
+
+.album-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.album-number,
+.album-count,
+.album-info {
+    position: absolute;
+    z-index: 3;
+}
+
+.album-number {
+    top: 25px;
+    left: 25px;
+}
+
+.album-count {
+    top: 25px;
+    right: 25px;
+}
+
+.album-info {
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+}
+
+@media (max-width: 900px) {
+    .albums {
+        grid-template-columns: 1fr !important;
+    }
+
+    .album-image,
+    .album-image img,
+    .album-image video {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .albums {
+        grid-template-columns: 1fr !important;
+    }
+
+    .album-image,
+    .album-image img,
+    .album-image video {
+        min-height: 500px;
+    }
+}
+
+/* =========================
+   HEADER — НЕ ФИКСИРОВАННЫЙ
+========================= */
+
+.header {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+
+    z-index: 1000 !important;
+
+    transform: none !important;
+}
